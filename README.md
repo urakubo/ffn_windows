@@ -38,7 +38,7 @@ http://www.sssem.info/registration-18-3.html
 #### af.h5中間ファイル生成
 
 ```af.h5中間ファイル生成
-> cd [ffn_windows]
+> cd [ffn_windows]/ffn
 > python  compute_partitions.py ^
     --input_volume  preprocessed_files/ground_truth.h5@raw ^
     --output_volume  preprocessed_files/af.h5@af ^
@@ -51,7 +51,7 @@ http://www.sssem.info/registration-18-3.html
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
-> cd [ffn_windows]
+> cd [ffn_windows]/ffn
 > python  build_coordinates.py ^
      --partition_volumes validation1@preprocessed_files/af.h5@af ^
      --coordinate_output preprocessed_files/tf_record_file ^
@@ -62,7 +62,7 @@ http://www.sssem.info/registration-18-3.html
 #### トレーニング実行
 
 ```トレーニング実行
-> cd [ffn_windows]
+> cd [ffn_windows]/ffn
 > mkdir training_results
 > python train.py ^
     --train_coords  preprocessed_files/tf_record_file ^
@@ -85,6 +85,18 @@ http://www.sssem.info/registration-18-3.html
 	--image_size_z 100 ^
 	--parameter_file configs/inference.pbtxt ^
 ```
+
+推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz に保存されます。
+
+#### 推論結果の png 形式への変更
+
+```推論結果の png 形式への変更
+> cp [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz  [ffn_windows]/postprocessing/
+> cd [ffn_windows]/postprocessing
+> python npz_png.py
+```
+
+推論結果（セグメンテーション）が png形式にて [ffn_windows]/postprocessing に0000.png, 0001.png, ...., 0099.pngと保存されます。
 
 #### 宣伝
 Windows10, 64bitにおいてGUIを用いてFFNを行い、校正・視覚化を行うこともできるソフトウェアを開発しました。是非、お試しください！
