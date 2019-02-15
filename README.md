@@ -1,4 +1,4 @@
-生体ボリュームイメージング研究会のためにアレンジした、サンプルEM画像、サンプル教師セグメンテーション画像、FFN-Windows10(64bit)版、前処理、後処理などのアクセサリプログラムをアップロードしました。
+生体ボリュームイメージング研究会のためにアレンジした、サンプルEM連続断層画像、サンプル教師セグメンテーション画像、FFN-Windows10(64bit)版、前処理、後処理などのアクセサリプログラムをアップロードしました。
 
 http://www.sssem.info/registration-18-3.html
 
@@ -34,7 +34,7 @@ http://www.sssem.info/registration-18-3.html
 	0099.png
 ```
 
-EM画像は imageフォルダに 8ビット gray-scale png にて、教師セグメンテーションはsegmentフォルダに 16bit gray-scale png にて保存されていることを確認してください。
+EM画像は [ffn_windows]/preprocessing/image フォルダに 8ビット gray-scale png にて、教師セグメンテーションは[ffn_windows]/preprocessing/segment フォルダに 16bit gray-scale png にて保存されていることを確認してください。
 
 #### hdf5 containerファイル生成
 
