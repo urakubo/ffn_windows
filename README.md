@@ -1,4 +1,4 @@
-生体ボリュームイメージング研究会のために作成した、Windows10, 64bitにてFFNを実行するためのプログラムです。
+生体ボリュームイメージング研究会のためにアレンジした、サンプルEM画像、サンプル教師セグメンテーション画像、FFN-Windows10(64bit)版、前処理、後処理などのアクセサリプログラムをアップロードしました。
 
 http://www.sssem.info/registration-18-3.html
 
@@ -17,6 +17,24 @@ http://www.sssem.info/registration-18-3.html
 		- https://qiita.com/kattoyoshi/items/494238793824f25fa489
 		- https://haitenaipants.hatenablog.com/entry/2018/07/25/002118
 
+
+#### EM画像と教師セグメンテーションの確認
+
+```EM画像と教師セグメンテーションの確認
+> ls [ffn_windows]/preprocessing/image
+	0000.png
+	0001.png
+	...
+	0099.png
+
+> ls [ffn_windows]/preprocessing/segment
+	0000.png
+	0001.png
+	...
+	0099.png
+```
+
+EM画像は imageフォルダに 8ビット gray-scale png にて、教師セグメンテーションはsegmentフォルダに 16bit gray-scale png にて保存されていることを確認してください。
 
 #### hdf5 containerファイル生成
 
