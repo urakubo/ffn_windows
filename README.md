@@ -10,12 +10,9 @@ http://www.sssem.info/registration-18-3.html
 -	Python3.6, Cuda9.0, Cudnn7.Xをインストールしてください。
 
 	- (参考) cuda 9.0, cuDNN v7のインストール方法。
-	
-	 https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0
-	 
-	 https://qiita.com/kattoyoshi/items/494238793824f25fa489
-	 
-	 https://haitenaipants.hatenablog.com/entry/2018/07/25/002118
+		- https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0
+		- https://qiita.com/kattoyoshi/items/494238793824f25fa489
+		- https://haitenaipants.hatenablog.com/entry/2018/07/25/002118
 
 
 #### hdf5 containerファイル生成
