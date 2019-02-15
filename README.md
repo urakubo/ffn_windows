@@ -49,10 +49,7 @@ http://www.sssem.info/registration-18-3.html
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
-<<<<<<< HEAD
-=======
 > cd [ffn_windows]
->>>>>>> 4256d54adad9d781929e8080eea06e144c174d2f
 > python  build_coordinates.py ^
      --partition_volumes validation1@preprocessed_files/af.h5@af ^
      --coordinate_output preprocessed_files/tf_record_file ^
