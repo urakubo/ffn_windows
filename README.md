@@ -66,7 +66,7 @@ http://www.sssem.info/registration-18-3.html
     --data_volumes  validation1@preprocessed_files/image.h5@raw ^
     --label_volumes  validation1@preprocessed_files/ground_truth.h5@raw ^
     --model_name  convstack_3d.ConvStack3DFFNModel ^
-    --model_args  "{\"depth\":12,\"fov_size\":[33,33,33],\"deltas\":[8,8,8]}" ^
+    --model_args  "{\"depth\":9,\"fov_size\":[33,33,17],\"deltas\":[8,8,4]}" ^
     --image_mean  131 ^
     --image_stddev  62 ^
     --train_dir  training_results ^
