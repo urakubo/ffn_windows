@@ -57,11 +57,12 @@ http://www.sssem.info/registration-18-3.html
 #### トレーニング実行
 
 ```トレーニング実行
+> cd [ffn_windows]
 > mkdir training_results
 > python train.py ^
     --train_coords  preprocessed_files/tf_record_file ^
-    --data_volumes  validation1@[image]/image.h5@raw ^
-    --label_volumes  validation1@[segment]/ground_truth.h5@raw ^
+    --data_volumes  validation1@preprocessed_files/image.h5@raw ^
+    --label_volumes  validation1@preprocessed_files/ground_truth.h5@raw ^
     --model_name  convstack_3d.ConvStack3DFFNModel ^
     --model_args  "{\"depth\":12,\"fov_size\":[33,33,33],\"deltas\":[8,8,8]}" ^
     --image_mean  131 ^
