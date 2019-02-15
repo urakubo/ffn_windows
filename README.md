@@ -3,6 +3,9 @@
 
 http://www.sssem.info/registration-18-3.html
 
+
+#### hdf5 containerファイル生成
+
 ```hdf5 containerファイル生成
 cd [ffn_windows]/preprocessing/image
 python png_to_h5.py image.h5
@@ -17,6 +20,9 @@ cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/preprocessed_files/
 cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/preprocessed_files/
 ```
 
+
+#### af.h5中間ファイル生成
+
 ```af.h5中間ファイル生成
 python  compute_partitions.py ^
     --input_volume  preprocessed_files/ground_truth.h5@raw ^
@@ -27,6 +33,8 @@ python  compute_partitions.py ^
 ```
 
 
+#### tf_record_file中間ファイル生成
+
 ```tf_record_file中間ファイル生成
 Python  build_coordinates.py ^
      --partition_volumes	  validation1@preprocessed_files/af.h5@af ^
@@ -34,6 +42,8 @@ Python  build_coordinates.py ^
      --margin 24,24,24
 ```
 
+
+#### トレーニング実行
 
 ```トレーニング実行
 mkdir training_results
