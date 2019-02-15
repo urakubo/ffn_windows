@@ -85,7 +85,7 @@ http://www.sssem.info/registration-18-3.html
 ```
 
 #### 宣伝
-Windows10, 64bitにてGUIを用いてFFNを行い、校正・視覚化を行うこともできるソフトウェアを開発しました。是非、お試しください！
+Windows10, 64bitにおいてGUIを用いてFFNを行い、校正・視覚化を行うこともできるソフトウェアを開発しました。是非、お試しください！
 - https://github.com/urakubo/Dojo-standalone
 
 #### 連絡先
