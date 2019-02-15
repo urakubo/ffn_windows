@@ -7,24 +7,24 @@ http://www.sssem.info/registration-18-3.html
 #### hdf5 containerファイル生成
 
 ```hdf5 containerファイル生成
-cd [ffn_windows]/preprocessing/image
-python png_to_h5.py image.h5
-python png_mean_std.py
+> cd [ffn_windows]/preprocessing/image
+> python png_to_h5.py image.h5
+> python png_mean_std.py
     Mean:  131
     Std :  62
 
-cd [ffn_windows]/preprocessing/segment
-python png_to_h5.py ground_truth.h5
+> cd [ffn_windows]/preprocessing/segment
+> python png_to_h5.py ground_truth.h5
 
-cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/preprocessed_files/
-cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/preprocessed_files/
+> cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/preprocessed_files/
+> cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/preprocessed_files/
 ```
 
 
 #### af.h5中間ファイル生成
 
 ```af.h5中間ファイル生成
-python  compute_partitions.py ^
+> python  compute_partitions.py ^
     --input_volume  preprocessed_files/ground_truth.h5@raw ^
     --output_volume  preprocessed_files/af.h5@af ^
     --thresholds  0.025,0.05,0.075,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9 ^
@@ -36,7 +36,7 @@ python  compute_partitions.py ^
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
-Python  build_coordinates.py ^
+> Python  build_coordinates.py ^
      --partition_volumes	  validation1@preprocessed_files/af.h5@af ^
      --coordinate_output	  preprocessed_files/tf_record_file ^
      --margin 24,24,24
@@ -46,8 +46,8 @@ Python  build_coordinates.py ^
 #### トレーニング実行
 
 ```トレーニング実行
-mkdir training_results
-python train.py ^
+> mkdir training_results
+> python train.py ^
     --train_coords  preprocessed_files/tf_record_file ^
     --data_volumes  validation1@[image]/image.h5@raw ^
     --label_volumes  validation1@[segment]/ground_truth.h5@raw ^
