@@ -35,6 +35,7 @@ http://www.sssem.info/registration-18-3.html
 #### af.h5中間ファイル生成
 
 ```af.h5中間ファイル生成
+> cd [ffn_windows]
 > python  compute_partitions.py ^
     --input_volume  preprocessed_files/ground_truth.h5@raw ^
     --output_volume  preprocessed_files/af.h5@af ^
@@ -47,6 +48,7 @@ http://www.sssem.info/registration-18-3.html
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
+> cd [ffn_windows]
 > python  build_coordinates.py ^
      --partition_volumes validation1@preprocessed_files/af.h5@af ^
      --coordinate_output preprocessed_files/tf_record_file ^
