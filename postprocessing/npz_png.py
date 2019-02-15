@@ -1,6 +1,6 @@
 import os
 filename  = 'seg-0_0_0.npz'
-outputdir = os.getcwd()  + os.sep + 'example1'
+outputdir = os.getcwd()  + os.sep + 'inferred_segmentation'
 inputdir  = os.getcwd()
 
 

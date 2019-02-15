@@ -44,9 +44,9 @@ from ffn.inference import inference_pb2
 
 FLAGS = flags.FLAGS
 
-flags.DEFINE_string('image_start_x', 0, 'image start x')
-flags.DEFINE_string('image_start_y', 0, 'image start y')
-flags.DEFINE_string('image_start_z', 0, 'image start z')
+flags.DEFINE_string('image_start_x', '0', 'image start x')
+flags.DEFINE_string('image_start_y', '0', 'image start y')
+flags.DEFINE_string('image_start_z', '0', 'image start z')
 flags.DEFINE_string('image_size_x', None, 'image size x')
 flags.DEFINE_string('image_size_y', None, 'image size y')
 flags.DEFINE_string('image_size_z', None, 'image size z')

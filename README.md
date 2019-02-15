@@ -1,9 +1,9 @@
-
 生体ボリュームイメージング研究会のために作成した、Windows10, 64bitにてffnを実行するためのプログラムです。
 
 http://www.sssem.info/registration-18-3.html
 
 #### 必要条件
+<<<<<<< HEAD
 -	ハイパフォーマンスデスクトップPC（30万円～）
 		OS：Linux (Ubuntu推奨), Windows 10
 		GPU:NVIDIA GTX1080ti以上
@@ -16,6 +16,18 @@ http://www.sssem.info/registration-18-3.html
 	<https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0>
 	<https://qiita.com/kattoyoshi/items/494238793824f25fa489>
 	<https://haitenaipants.hatenablog.com/entry/2018/07/25/002118>
+=======
+-	ハイパフォーマンスデスクトップPC を用意してください。
+	- OS：Windows 10 [Linux の場合は、オリジナルのプログラム https://github.com/google/ffn を用いてください。]
+	- GPU:NVIDIA GTX1080ti以上
+
+-	Python3.6, Cuda9.0, Cudnn7.Xをインストールしてください。
+
+	- (参考) cuda 9.0, cuDNN v7のインストール方法。
+		- https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0
+		- https://qiita.com/kattoyoshi/items/494238793824f25fa489
+		- https://haitenaipants.hatenablog.com/entry/2018/07/25/002118
+>>>>>>> 4256d54adad9d781929e8080eea06e144c174d2f
 
 
 #### hdf5 containerファイル生成
@@ -38,6 +50,7 @@ http://www.sssem.info/registration-18-3.html
 #### af.h5中間ファイル生成
 
 ```af.h5中間ファイル生成
+> cd [ffn_windows]
 > python  compute_partitions.py ^
     --input_volume  preprocessed_files/ground_truth.h5@raw ^
     --output_volume  preprocessed_files/af.h5@af ^
@@ -50,6 +63,10 @@ http://www.sssem.info/registration-18-3.html
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
+<<<<<<< HEAD
+=======
+> cd [ffn_windows]
+>>>>>>> 4256d54adad9d781929e8080eea06e144c174d2f
 > python  build_coordinates.py ^
      --partition_volumes validation1@preprocessed_files/af.h5@af ^
      --coordinate_output preprocessed_files/tf_record_file ^
@@ -60,19 +77,29 @@ http://www.sssem.info/registration-18-3.html
 #### トレーニング実行
 
 ```トレーニング実行
+> cd [ffn_windows]
 > mkdir training_results
 > python train.py ^
     --train_coords  preprocessed_files/tf_record_file ^
-    --data_volumes  validation1@[image]/image.h5@raw ^
-    --label_volumes  validation1@[segment]/ground_truth.h5@raw ^
+    --data_volumes  validation1@preprocessed_files/image.h5@raw ^
+    --label_volumes  validation1@preprocessed_files/ground_truth.h5@raw ^
     --model_name  convstack_3d.ConvStack3DFFNModel ^
-    --model_args  "{\"depth\":12,\"fov_size\":[33,33,33],\"deltas\":[8,8,8]}" ^
+    --model_args  "{\"depth\":9,\"fov_size\":[33,33,17],\"deltas\":[8,8,4]}" ^
     --image_mean  131 ^
     --image_stddev  62 ^
     --train_dir  training_results ^
     --max_steps  1000000
 ```
 
+#### 推論実行
+
+```推論実行
+> python run_inference_win.py ^
+	--image_size_x 512 ^
+	--image_size_y 512 ^
+	--image_size_z 100 ^
+	--parameter_file configs/inference.pbtxt ^
+```
 
 build_coordinates.py
 compute_partitions.py
@@ -84,5 +111,4 @@ split(':') => split('@')
 storage.py , L58 
 settings.hdf5.split(':') => split('@')
 2019/1/29 H Urakubo
-
 
