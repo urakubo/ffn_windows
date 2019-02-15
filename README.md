@@ -4,16 +4,22 @@ http://www.sssem.info/registration-18-3.html
 
 #### 必要条件
 -	ハイパフォーマンスデスクトップPC（30万円～）
+
 		OS：Linux (Ubuntu推奨), Windows 10
+
 		GPU:NVIDIA GTX1080ti以上
 
 -	Python3.6をインストールしてください。
+
 		Cuda9.0, Cudnn7.Xをインストールしてください。
 
 
-(参考1) cuda 9.0, cuDNN v7のインストール方法。
+(参考) cuda 9.0, cuDNN v7のインストール方法。
+
 	<https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0>
+
 	<https://qiita.com/kattoyoshi/items/494238793824f25fa489>
+
 	<https://haitenaipants.hatenablog.com/entry/2018/07/25/002118>
 
 
