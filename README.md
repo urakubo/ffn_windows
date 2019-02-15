@@ -1,4 +1,4 @@
-生体ボリュームイメージング研究会のために作成した、Windows10, 64bitにてffnを実行するためのプログラムです。
+生体ボリュームイメージング研究会のために作成した、Windows10, 64bitにてFFNを実行するためのプログラムです。
 
 http://www.sssem.info/registration-18-3.html
 
