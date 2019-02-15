@@ -28,8 +28,8 @@ http://www.sssem.info/registration-18-3.html
 > cd [ffn_windows]/preprocessing/segment
 > python png_to_h5.py ground_truth.h5
 
-> cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/preprocessed_files/
-> cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/preprocessed_files/
+> cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/ffn/preprocessed_files/
+> cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/ffn/preprocessed_files/
 ```
 
 
