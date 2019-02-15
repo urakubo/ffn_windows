@@ -3,31 +3,17 @@
 http://www.sssem.info/registration-18-3.html
 
 #### 必要条件
-<<<<<<< HEAD
 -	ハイパフォーマンスデスクトップPC（30万円～）
-		OS：Linux (Ubuntu推奨), Windows 10
-		GPU:NVIDIA GTX1080ti以上
-
--	Python3.6をインストールしてください。
-		Cuda9.0, Cudnn7.Xをインストールしてください。
-
-
-(参考1) cuda 9.0, cuDNN v7のインストール方法。
-	<https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0>
-	<https://qiita.com/kattoyoshi/items/494238793824f25fa489>
-	<https://haitenaipants.hatenablog.com/entry/2018/07/25/002118>
-=======
--	ハイパフォーマンスデスクトップPC を用意してください。
 	- OS：Windows 10 [Linux の場合は、オリジナルのプログラム https://github.com/google/ffn を用いてください。]
 	- GPU:NVIDIA GTX1080ti以上
 
--	Python3.6, Cuda9.0, Cudnn7.Xをインストールしてください。
+-	Python3.6をインストールしてください。
+		Cuda9.0, Cudnn7.Xをインストールしてください。
 
 	- (参考) cuda 9.0, cuDNN v7のインストール方法。
 		- https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0
 		- https://qiita.com/kattoyoshi/items/494238793824f25fa489
 		- https://haitenaipants.hatenablog.com/entry/2018/07/25/002118
->>>>>>> 4256d54adad9d781929e8080eea06e144c174d2f
 
 
 #### hdf5 containerファイル生成
@@ -101,14 +87,8 @@ http://www.sssem.info/registration-18-3.html
 	--parameter_file configs/inference.pbtxt ^
 ```
 
-build_coordinates.py
-compute_partitions.py
-train.py
+#### 宣伝
+Windows10, 64bitにてGUIを用いてFFNを行うことができ、校正・視覚化もできるソフトウェアを開発しました。是非、お試しください！
+- https://github.com/urakubo/Dojo-standalone
 
-split(':') => split('@')
-2019/1/28 H Urakubo
-
-storage.py , L58 
-settings.hdf5.split(':') => split('@')
-2019/1/29 H Urakubo
 
