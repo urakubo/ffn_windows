@@ -51,7 +51,7 @@ EM画像は [ffn_windows]/preprocessing/image フォルダに 8ビット gray-sc
 > cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/ffn/preprocessed_files/
 > cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/ffn/preprocessed_files/
 ```
-
+png連続ファイルをhdf5コンテナ形式に変換します。また、EM画像については、png_mean_std.pyを用いて画像の平均強度と標準偏差を求めて記録してください。
 
 #### af.h5中間ファイル生成
 
