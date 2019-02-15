@@ -34,7 +34,8 @@ http://www.sssem.info/registration-18-3.html
 	0099.png
 ```
 
-EM画像は [ffn_windows]/preprocessing/image フォルダに 8ビット gray-scale png にて、教師セグメンテーションは[ffn_windows]/preprocessing/segment フォルダに 16bit gray-scale png にて保存されていることを確認してください。
+	EM画像は [ffn_windows]/preprocessing/image フォルダに 8ビット gray-scale png にて、教師セグメンテーションは	
+	[ffn_windows]/preprocessing/segment フォルダに 16bit gray-scale png にて保存されていることを確認してください。
 
 #### hdf5 containerファイル生成
 
@@ -51,7 +52,8 @@ EM画像は [ffn_windows]/preprocessing/image フォルダに 8ビット gray-sc
 > cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/ffn/preprocessed_files/
 > cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/ffn/preprocessed_files/
 ```
-png連続ファイルがhdf5コンテナ形式に変換されて保存されます。また、EM画像については、png_mean_std.pyを用いて画像の平均強度と標準偏差を求めて記録してください。
+	png連続ファイルがhdf5コンテナ形式に変換されて保存されます。また、EM画像については、
+	png_mean_std.pyを用いて画像の平均強度と標準偏差を求めて記録してください。
 
 #### af.h5中間ファイル生成
 
@@ -64,7 +66,7 @@ png連続ファイルがhdf5コンテナ形式に変換されて保存されま�
     --lom_radius  24,24,24 ^
     --min_size  10000
 ```
-5-30分程度かかります。
+	5-30分程度かかります。
 
 #### tf_record_file中間ファイル生成
 
@@ -75,7 +77,7 @@ png連続ファイルがhdf5コンテナ形式に変換されて保存されま�
      --coordinate_output preprocessed_files/tf_record_file ^
      --margin 24,24,24
 ```
-5-30分程度かかります。
+	5-30分程度かかります。
 
 #### トレーニング実行
 
@@ -93,7 +95,9 @@ png連続ファイルがhdf5コンテナ形式に変換されて保存されま�
     --train_dir  training_results ^
     --max_steps  1000000
 ```
-EM画像の平均強度、標準偏差をimage_mean, image_stddevに記入してください。max_stepsに最大ステップ数を記入してください。推論に用いるためには数百万回以上のトレーニングが必要です。私達の経験では、NVIDIA社の高性能GPUを搭載したPCで 最低3日、標準的には2-3週間かかります。
+	image_mean, image_stddevにEM画像の平均強度、標準偏差を記入してください。max_stepsに最大ステップ数を記入してください。
+	推論に用いるためには数百万回以上のトレーニングが必要です。私達の経験では、NVIDIA社の高性能GPUを搭載したPCで 
+	最低3日、標準的には2-3週間かかります。
 
 
 #### 推論実行
@@ -106,7 +110,8 @@ EM画像の平均強度、標準偏差をimage_mean, image_stddevに記入して
 	--parameter_file configs/inference.pbtxt ^
 ```
 
-推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz に保存されます。NVIDIA社の高性能GPUを搭載したPCで数十分かかります。
+	推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz に保存されます。
+	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。
 
 #### 推論結果の png 形式への変更
 
@@ -116,7 +121,8 @@ EM画像の平均強度、標準偏差をimage_mean, image_stddevに記入して
 > python npz_png.py
 ```
 
-推論結果（セグメンテーション）が png形式にて [ffn_windows]/postprocessing に0000.png, 0001.png, ...., 0099.pngと保存されます。
+	推論結果（セグメンテーション）が png形式にて [ffn_windows]/postprocessing に
+	0000.png, 0001.png, ...., 0099.pngと保存されます。
 
 #### 宣伝
 Windows10, 64bitにおいてGUIを用いてFFNを行い、校正・視覚化を行うこともできるソフトウェアを開発しました。是非、お試しください！
