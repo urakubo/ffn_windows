@@ -1,7 +1,20 @@
-
 生体ボリュームイメージング研究会のために作成した、Windows10, 64bitにてffnを実行するためのプログラムです。
 
 http://www.sssem.info/registration-18-3.html
+
+#### 必要条件
+-	ハイパフォーマンスデスクトップPC（30万円～）
+		OS：Linux (Ubuntu推奨), Windows 10
+		GPU:NVIDIA GTX1080ti以上
+
+-	Python3.6をインストールしてください。
+		Cuda9.0, Cudnn7.Xをインストールしてください。
+
+
+(参考1) cuda 9.0, cuDNN v7のインストール方法。
+	<https://qiita.com/spiderx_jp/items/8d863b087507cd4a56b0>
+	<https://qiita.com/kattoyoshi/items/494238793824f25fa489>
+	<https://haitenaipants.hatenablog.com/entry/2018/07/25/002118>
 
 
 #### hdf5 containerファイル生成
@@ -36,9 +49,9 @@ http://www.sssem.info/registration-18-3.html
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
-> Python  build_coordinates.py ^
-     --partition_volumes	  validation1@preprocessed_files/af.h5@af ^
-     --coordinate_output	  preprocessed_files/tf_record_file ^
+> python  build_coordinates.py ^
+     --partition_volumes validation1@preprocessed_files/af.h5@af ^
+     --coordinate_output preprocessed_files/tf_record_file ^
      --margin 24,24,24
 ```
 
@@ -70,5 +83,4 @@ split(':') => split('@')
 storage.py , L58 
 settings.hdf5.split(':') => split('@')
 2019/1/29 H Urakubo
-
 
