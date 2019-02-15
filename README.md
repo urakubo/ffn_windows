@@ -3,8 +3,8 @@
 http://www.sssem.info/registration-18-3.html
 
 #### 必要条件
--	ハイパフォーマンスデスクトップPC（30万円～）
-	- OS：Linux (Ubuntu推奨), Windows 10
+-	ハイパフォーマンスデスクトップPC を用意してください。
+	- OS：Windows 10 [Linux の場合は、オリジナルのプログラム https://github.com/google/ffn を利用してください。]
 	- GPU:NVIDIA GTX1080ti以上
 
 -	Python3.6, Cuda9.0, Cudnn7.Xをインストールしてください。
