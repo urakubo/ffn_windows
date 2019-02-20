@@ -49,8 +49,8 @@ http://www.sssem.info/registration-18-3.html
 > cd [ffn_windows]\preprocessing\segment
 > python png_to_h5.py ground_truth.h5
 
-> cp [ffn_windows]\preprocessing\image\image.h5  [ffn_windows]\ffn\preprocessed_files\
-> cp [ffn_windows]\preprocessing\segment\ground_truth.h5  [ffn_windows]\ffn\preprocessed_files\
+> copy [ffn_windows]\preprocessing\image\image.h5  [ffn_windows]\ffn\preprocessed_files\
+> copy [ffn_windows]\preprocessing\segment\ground_truth.h5  [ffn_windows]\ffn\preprocessed_files\
 ```
 	png連続ファイルがhdf5コンテナ形式に変換されて保存されます。また、EM画像については、
 	png_mean_std.pyを用いて画像の平均強度と標準偏差を求めて記録してください。
@@ -116,7 +116,7 @@ http://www.sssem.info/registration-18-3.html
 #### 推論結果の png 形式への変更
 
 ```推論結果の png 形式への変更
-> cp [ffn_windows]\ffn\inference_results\0\0\seg-0_0_0.npz  [ffn_windows]\postprocessing\
+> copy [ffn_windows]\ffn\inference_results\0\0\seg-0_0_0.npz  [ffn_windows]\postprocessing\
 > cd [ffn_windows]\postprocessing
 > python npz_png.py
 ```
