@@ -110,9 +110,11 @@ http://www.sssem.info/registration-18-3.html
 	--parameter_file configs/inference.pbtxt
 ```
 
-	推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz, [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.prob に保存されます。
+	推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz,
+	[ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.prob に保存されます。
 	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。サンプルとして添付した256x256 xy-pixels,
-	100 z-sliceのファイルの推論は5分程度です。前回の推論結果seg-0_0_0.npz, seg-0_0_0.probが残っていると推論が実行されませんので消してください。
+	100 z-sliceのファイルの推論は5分程度です。前回の推論結果seg-0_0_0.npz, seg-0_0_0.probが
+	残っていると推論が実行されません。実行前に消してください。
 
 #### 推論結果の png 形式への変更
 
