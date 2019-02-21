@@ -77,7 +77,8 @@ http://www.sssem.info/registration-18-3.html
      --coordinate_output preprocessed_files\tf_record_file ^
      --margin 24,24,24
 ```
-	5-30分程度かかります。他の中間ファイルは [ffn_windows]\ffn\preprocessed_files にすでに作成されたものが入っていますが、本ファイルはファイルサイズが大きいため、未作成です。必ず作成してください。
+	5-30分程度かかります。hdf5中間ファイルは [ffn_windows]\ffn\preprocessed_files に作成されたものが入っていますが
+	本ファイルはファイルサイズが大きいため、未作成です。必ず作成してください。
 
 #### トレーニング実行
 
@@ -112,9 +113,9 @@ http://www.sssem.info/registration-18-3.html
 
 	推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz,
 	[ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.prob に保存されます。
-	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。サンプルとして添付した256x256 xy-pixels,
-	100 z-sliceのファイルの推論は5分程度です。前回の推論結果seg-0_0_0.npz, seg-0_0_0.probが
-	残っていると推論が実行されません。実行前に消してください。
+	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。
+	サンプルとして添付した256x256 xy-pixels,　100 z-sliceのファイルの推論は5分程度です。
+	前回の推論結果seg-0_0_0.npz, seg-0_0_0.probが残っていると推論が実行されません。実行前に消してください。
 
 #### 推論結果の png 形式への変更
 
