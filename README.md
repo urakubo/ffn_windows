@@ -111,7 +111,8 @@ http://www.sssem.info/registration-18-3.html
 ```
 
 	推論結果（セグメンテーション）が numpy形式にて [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz に保存されます。
-	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。
+	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。サンプルとして添付した256x256 xy-pixels,
+	100 z-sliceのファイルの推論は5分程度です。
 
 #### 推論結果の png 形式への変更
 
