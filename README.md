@@ -5,7 +5,7 @@ http://www.sssem.info/registration-18-3.html
 [生体ボリュームイメージング研究会ハンズオンにて用いたスライド](FFN_HandsOn.pdf) 
 
 
-ここでは、ATUM/SEMによって連続断層撮影されたMouse somatosensory cortexの細胞膜のセグメンテーションを行います。撮影データは ISBI 2013 challenge ([SNEMI3D](http://brainiac2.mit.edu/SNEMI3D/)) において用いられたものをそもまま使用させて頂いております。EM画像には、使用前に Contrast Limited Adaptive Histogram Equalization (CLAHE)フィルタを通しています (blocksize 127,　Histogram bins 256, max slope 1.50) 。同データを用いた論文は Kasthuri et al. ( Cell 162(3):648-61, 2015 ) に出版されました。EM画像は Open Data Commons Attribution License (ODC-By) v1.0 ライセンスのもと公開されています。
+ここでは、ATUM/SEMによって連続断層撮影されたMouse somatosensory cortexの細胞膜のセグメンテーションを行います。撮影データは ISBI 2013 challenge ([SNEMI3D](http://brainiac2.mit.edu/SNEMI3D/)) において用いられたものをそもまま使用させて頂いております。EM画像には、使用前に Contrast Limited Adaptive Histogram Equalization (CLAHE)フィルタを通しています (ImageJ; blocksize 127,　Histogram bins 256, max slope 1.50) 。同データを用いた論文は Kasthuri et al. ( Cell 162(3):648-61, 2015 ) に出版されました。EM画像は Open Data Commons Attribution License (ODC-By) v1.0 ライセンスのもと公開されています。
 
 #### 必要条件
 -	ハイパフォーマンスデスクトップPC（30万円～）
