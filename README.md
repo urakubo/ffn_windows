@@ -58,7 +58,7 @@ http://www.sssem.info/registration-18-3.html
 #### af.h5中間ファイル生成
 
 ```af.h5中間ファイル生成
-> cd [ffn_windows]/ffn
+> cd [ffn_windows]\ffn
 > python  compute_partitions.py ^
     --input_volume  preprocessed_files\ground_truth.h5@raw ^
     --output_volume  preprocessed_files\af.h5@af ^
@@ -77,7 +77,7 @@ http://www.sssem.info/registration-18-3.html
      --coordinate_output preprocessed_files\tf_record_file ^
      --margin 24,24,24
 ```
-	5-30分程度かかります。
+	5-30分程度かかります。他の中間ファイルは [ffn_windows]\ffn\preprocessed_files にすでに作成されたものが入っていますが、本ファイルはファイルサイズが大きいため、未作成です。必ず作成してください。
 
 #### トレーニング実行
 
