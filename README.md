@@ -21,7 +21,7 @@ http://www.sssem.info/registration-18-3.html
 #### EM画像と教師セグメンテーションの確認
 
 ```EM画像と教師セグメンテーションの確認
-> dir [ffn_windows]\preprocessing\image
+> dir [ffn_windows]\preprocessing\images
 	0000.png
 	0001.png
 	...
@@ -34,14 +34,14 @@ http://www.sssem.info/registration-18-3.html
 	0099.png
 ```
 
-	EM画像は [ffn_windows]/preprocessing/image フォルダに 8ビット gray-scale png にて、教師セグメンテーションは	
+	EM画像は [ffn_windows]/preprocessing/images フォルダに 8ビット gray-scale png にて、教師セグメンテーションは	
 	[ffn_windows]/preprocessing/segment フォルダに 16bit gray-scale png にて保存されていることを確認してください。
 
 #### hdf5 containerファイル生成
 
 ```hdf5 containerファイル生成
-> cd [ffn_windows]\preprocessing\image
-> python png_to_h5.py image.h5
+> cd [ffn_windows]\preprocessing\images
+> python png_to_h5.py images.h5
 > python png_mean_std.py
     Mean:  131
     Std :  62
@@ -49,7 +49,7 @@ http://www.sssem.info/registration-18-3.html
 > cd [ffn_windows]\preprocessing\segment
 > python png_to_h5.py ground_truth.h5
 
-> copy [ffn_windows]\preprocessing\image\image.h5  [ffn_windows]\ffn\preprocessed_files\
+> copy [ffn_windows]\preprocessing\images\images.h5  [ffn_windows]\ffn\preprocessed_files\
 > copy [ffn_windows]\preprocessing\segment\ground_truth.h5  [ffn_windows]\ffn\preprocessed_files\
 ```
 	png連続ファイルがhdf5コンテナ形式に変換されて保存されます。また、EM画像については、
