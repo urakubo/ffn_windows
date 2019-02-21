@@ -21,13 +21,13 @@ http://www.sssem.info/registration-18-3.html
 #### EM画像と教師セグメンテーションの確認
 
 ```EM画像と教師セグメンテーションの確認
-> ls [ffn_windows]/preprocessing/image
+> dir [ffn_windows]\preprocessing\image
 	0000.png
 	0001.png
 	...
 	0099.png
 
-> ls [ffn_windows]/preprocessing/segment
+> dir [ffn_windows]\preprocessing\segment
 	0000.png
 	0001.png
 	...
@@ -40,17 +40,17 @@ http://www.sssem.info/registration-18-3.html
 #### hdf5 containerファイル生成
 
 ```hdf5 containerファイル生成
-> cd [ffn_windows]/preprocessing/image
+> cd [ffn_windows]\preprocessing\image
 > python png_to_h5.py image.h5
 > python png_mean_std.py
     Mean:  131
     Std :  62
 
-> cd [ffn_windows]/preprocessing/segment
+> cd [ffn_windows]\preprocessing\segment
 > python png_to_h5.py ground_truth.h5
 
-> cp [ffn_windows]/preprocessing/image/image.h5  [ffn_windows]/ffn/preprocessed_files/
-> cp [ffn_windows]/preprocessing/segment/ground_truth.h5  [ffn_windows]/ffn/preprocessed_files/
+> copy [ffn_windows]\preprocessing\image\image.h5  [ffn_windows]\ffn\preprocessed_files\
+> copy [ffn_windows]\preprocessing\segment\ground_truth.h5  [ffn_windows]\ffn\preprocessed_files\
 ```
 	png連続ファイルがhdf5コンテナ形式に変換されて保存されます。また、EM画像については、
 	png_mean_std.pyを用いて画像の平均強度と標準偏差を求めて記録してください。
@@ -60,8 +60,8 @@ http://www.sssem.info/registration-18-3.html
 ```af.h5中間ファイル生成
 > cd [ffn_windows]/ffn
 > python  compute_partitions.py ^
-    --input_volume  preprocessed_files/ground_truth.h5@raw ^
-    --output_volume  preprocessed_files/af.h5@af ^
+    --input_volume  preprocessed_files\ground_truth.h5@raw ^
+    --output_volume  preprocessed_files\af.h5@af ^
     --thresholds  0.025,0.05,0.075,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9 ^
     --lom_radius  24,24,24 ^
     --min_size  10000
@@ -71,10 +71,10 @@ http://www.sssem.info/registration-18-3.html
 #### tf_record_file中間ファイル生成
 
 ```tf_record_file中間ファイル生成
-> cd [ffn_windows]/ffn
+> cd [ffn_windows]\ffn
 > python  build_coordinates.py ^
-     --partition_volumes validation1@preprocessed_files/af.h5@af ^
-     --coordinate_output preprocessed_files/tf_record_file ^
+     --partition_volumes validation1@preprocessed_files\af.h5@af ^
+     --coordinate_output preprocessed_files\tf_record_file ^
      --margin 24,24,24
 ```
 	5-30分程度かかります。
@@ -82,12 +82,12 @@ http://www.sssem.info/registration-18-3.html
 #### トレーニング実行
 
 ```トレーニング実行
-> cd [ffn_windows]/ffn
+> cd [ffn_windows]\ffn
 > mkdir training_results
 > python train.py ^
-    --train_coords  preprocessed_files/tf_record_file ^
-    --data_volumes  validation1@preprocessed_files/image.h5@raw ^
-    --label_volumes  validation1@preprocessed_files/ground_truth.h5@raw ^
+    --train_coords  preprocessed_files\tf_record_file ^
+    --data_volumes  validation1@preprocessed_files\image.h5@raw ^
+    --label_volumes  validation1@preprocessed_files\ground_truth.h5@raw ^
     --model_name  convstack_3d.ConvStack3DFFNModel ^
     --model_args  "{\"depth\":9,\"fov_size\":[33,33,17],\"deltas\":[8,8,4]}" ^
     --image_mean  131 ^
@@ -104,8 +104,8 @@ http://www.sssem.info/registration-18-3.html
 
 ```推論実行
 > python run_inference_win.py ^
-	--image_size_x 512 ^
-	--image_size_y 512 ^
+	--image_size_x 256 ^
+	--image_size_y 256 ^
 	--image_size_z 100 ^
 	--parameter_file configs/inference.pbtxt ^
 ```
@@ -116,8 +116,8 @@ http://www.sssem.info/registration-18-3.html
 #### 推論結果の png 形式への変更
 
 ```推論結果の png 形式への変更
-> cp [ffn_windows]/ffn/inference_results/0/0/seg-0_0_0.npz  [ffn_windows]/postprocessing/
-> cd [ffn_windows]/postprocessing
+> copy [ffn_windows]\ffn\inference_results\0\0\seg-0_0_0.npz  [ffn_windows]\postprocessing\
+> cd [ffn_windows]\postprocessing
 > python npz_png.py
 ```
 
