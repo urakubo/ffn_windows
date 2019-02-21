@@ -84,7 +84,6 @@ http://www.sssem.info/registration-18-3.html
 
 ```トレーニング実行
 > cd [ffn_windows]\ffn
-> mkdir training_results
 > python train.py ^
     --train_coords  preprocessed_files\tf_record_file ^
     --data_volumes  validation1@preprocessed_files\images.h5@raw ^
