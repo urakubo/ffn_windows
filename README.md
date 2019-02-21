@@ -104,8 +104,8 @@ http://www.sssem.info/registration-18-3.html
 
 ```推論実行
 > python run_inference_win.py ^
-	--image_size_x 512 ^
-	--image_size_y 512 ^
+	--image_size_x 256 ^
+	--image_size_y 256 ^
 	--image_size_z 100 ^
 	--parameter_file configs/inference.pbtxt ^
 ```
