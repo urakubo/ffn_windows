@@ -86,7 +86,7 @@ http://www.sssem.info/registration-18-3.html
 > mkdir training_results
 > python train.py ^
     --train_coords  preprocessed_files\tf_record_file ^
-    --data_volumes  validation1@preprocessed_files\image.h5@raw ^
+    --data_volumes  validation1@preprocessed_files\images.h5@raw ^
     --label_volumes  validation1@preprocessed_files\ground_truth.h5@raw ^
     --model_name  convstack_3d.ConvStack3DFFNModel ^
     --model_args  "{\"depth\":9,\"fov_size\":[33,33,17],\"deltas\":[8,8,4]}" ^
