@@ -102,7 +102,7 @@ http://www.sssem.info/registration-18-3.html
 	推論に用いるためには数百万回以上のトレーニングが必要です。私達の経験では、NVIDIA社の高性能GPUを搭載したPCで 
 	最低3日、標準的には2-3週間かかります。本ファイルには、3週間かけてシミュレーションを行った
 	Tensorflowモデル model.ckpt-7000000 が [ffn_windows]\training_results フォルダに保存されています。
-	ISBI2013 EM画像に対する推論を行う方は、まずは添付のモデルを用いて推論を試みてください。
+	ISBI2013 EM画像に対する推論を行う方は、まずは添付の model.ckpt-7000000 を用いて推論を試みてください。
 	
 
 
