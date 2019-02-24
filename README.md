@@ -123,7 +123,7 @@ http://www.sssem.info/registration-18-3.html
 	前回の推論結果seg-0_0_0.npz, seg-0_0_0.probが残っていると推論が実行されません。実行前に消してください。
 	プログラムを実行すると、paramter_file [ffn_windows]/configs/inference.pbtxt が読みだされ、
 	ファイル中で指定されたTensorflow モデルmodel.ckpt-7000000 に基づいて推論が開始されます。
-	ご自身がトレーニングしたモデルを用いる場合は、inferrence .pbtxtを適宜編集してください。
+	ご自身がトレーニングしたモデルを用いる場合は、inferrence.pbtxtを編集してください。
 
 #### 推論結果の png 形式への変更
 
