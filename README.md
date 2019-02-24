@@ -102,6 +102,7 @@ http://www.sssem.info/registration-18-3.html
 	推論に用いるためには数百万回以上のトレーニングが必要です。私達の経験では、NVIDIA社の高性能GPUを搭載したPCで 
 	最低3日、標準的には2-3週間かかります。本ファイルには、3週間かけてシミュレーションを行った
 	Tensorflowモデル model.ckpt-7000000 が [ffn_windows]\training_results フォルダに保存されています。
+	ISBI2013 EM画像に対する推論を行う方は、まずは添付のモデルを用いて推論を試みてください。
 	
 
 
@@ -120,6 +121,9 @@ http://www.sssem.info/registration-18-3.html
 	NVIDIA社の高性能GPUを搭載したPCで数十分かかります。
 	サンプルとして添付した256x256 xy-pixels,　100 z-sliceのファイルの推論は5分程度です。
 	前回の推論結果seg-0_0_0.npz, seg-0_0_0.probが残っていると推論が実行されません。実行前に消してください。
+	プログラムを実行すると、paramter_file [ffn_windows]/configs/inference.pbtxt が読みだされ、
+	ファイル中で指定されたTensorflow モデルmodel.ckpt-7000000 に基づいて推論が開始されます。
+	ご自身がトレーニングしたモデルを用いる場合は、inferrence .pbtxtを適宜編集してください。
 
 #### 推論結果の png 形式への変更
 
