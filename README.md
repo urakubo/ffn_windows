@@ -100,7 +100,9 @@ http://www.sssem.info/registration-18-3.html
 ```
 	image_mean, image_stddevにEM画像の平均強度、標準偏差を記入してください。max_stepsに最大ステップ数を記入してください。
 	推論に用いるためには数百万回以上のトレーニングが必要です。私達の経験では、NVIDIA社の高性能GPUを搭載したPCで 
-	最低3日、標準的には2-3週間かかります。
+	最低3日、標準的には2-3週間かかります。本ファイルには、3週間かけてシミュレーションを行った
+	Tensorflowモデル model.ckpt-7000000 が [ffn_windows]\training_results フォルダに保存されています。
+	
 
 
 #### 推論実行
